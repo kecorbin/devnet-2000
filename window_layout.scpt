@@ -22,12 +22,12 @@ tell application "iTerm"
 	end tell
 
 	tell pane_2
-		write text "workon devnet-2000"
+		write text "workon devnet-2000; git log"
 		set name to "DEVNET-2000 Demo"
 	end tell
 
 	tell pane_3
 		write text "workon devnet-2000; make subscribe"
-		set name to "DEVNET-2000 Demo"
+		set name to "Subscribe to Tenant Objects"
 	end tell
 end tell
