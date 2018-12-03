@@ -1,4 +1,6 @@
-# aci-ansible-sample
+# devnet-2000
+
+Scripts used for Cisco Live DEVNET-2000
 
 
 # Requirements
