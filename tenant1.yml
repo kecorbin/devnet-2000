@@ -1,0 +1,5 @@
+tenant_name: ansible-tenant
+app_name: ansible-app
+epg_name: ansible-epg
+vrf_name: ansible-vrf
+bd_name: ansible-bd

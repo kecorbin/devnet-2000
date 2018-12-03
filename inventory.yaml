@@ -1,0 +1,9 @@
+
+all:
+  children:
+    acipod1:
+      hosts:
+        apic1:
+          ip: "{{ lookup('env','APIC_IP') }}"
+          username: "{{ lookup('env','APIC_LOGIN') }}"
+          password: "{{ lookup('env','APIC_PASSWORD') }}"

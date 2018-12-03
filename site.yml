@@ -1,0 +1,61 @@
+
+- name: Configure ACI Tenant
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars:
+    state: present
+  tasks:
+    - name:
+      aci_tenant:
+        hostname: "{{ ip }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
+        tenant: "{{ tenant_name }}"
+        description: a tenant created by ansible
+        state: "{{ state }}"
+
+    - name: Add Application Profile
+      aci_ap:
+        hostname: "{{ ip }}"
+        username: "{{ username }}"
+        password: "{{ password}}"
+        validate_certs: no
+        tenant: "{{ tenant_name }}"
+        ap: "{{ app_name }}"
+        state: "{{ state }}"
+
+    - name: Add a new VRF to a tenant
+      aci_vrf:
+        hostname: "{{ ip }}"
+        username: "{{ username }}"
+        password: "{{ password}}"
+        validate_certs: no
+        vrf: "{{ vrf_name }}"
+        tenant: "{{ tenant_name }}"
+        state: "{{ state }}"
+
+    - name: Add Bridge Domain
+      aci_bd:
+        hostname: "{{ ip }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
+        state: present
+        tenant: "{{ tenant_name }}"
+        bd: "{{ bd_name }}"
+        vrf: "{{ vrf_name }}"
+        state: "{{ state }}"
+
+    - name: Add a new EPG
+      aci_epg:
+        hostname: "{{ ip }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
+        tenant: "{{ tenant_name }}"
+        ap: "{{ app_name }}"
+        epg: ansible-epg
+        bd: "{{ bd_name }}"
+        state: "{{ state }}"
