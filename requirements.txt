@@ -1,12 +1,12 @@
 acitoolkit==0.4
-ansible==2.4.3.0
+ansible==2.4.5.0
 asn1crypto==0.24.0
 bcrypt==3.1.4
 certifi==2018.10.15
 cffi==1.11.5
 chardet==3.0.4
 Click==7.0
-cryptography==2.2.2
+cryptography==2.3
 deepdiff==3.3.0
 dominate==2.3.4
 enum34==1.1.6
@@ -27,7 +27,7 @@ Jinja2==2.10
 jsonpickle==1.0
 jsonschema==2.6.0
 MarkupSafe==1.0
-paramiko==2.4.1
+paramiko==2.4.2
 py-radix==0.10.0
 pyasn1==0.4.2
 pycparser==2.18
